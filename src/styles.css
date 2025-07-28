@@ -1,0 +1,112 @@
+/* src/styles.css */
+:root {
+    --background-color: #22272e;
+    --sidebar-background: #1c2128;
+    --text-color: #cdd9e5;
+    --text-color-muted: #768390;
+    --border-color: #373e47;
+    --accent-color: #4a90e2;
+    --status-blue: #316dca;
+    --status-green: #2a8343;
+    --status-gray: #6e7681;
+}
+
+/* Basic body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    font-size: 14px;
+    overflow: hidden; /* Prevent body scrollbars */
+}
+
+/* Main two-column layout container */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 220px;
+    background-color: var(--sidebar-background);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    flex-shrink: 0;
+}
+.sidebar-title {
+    font-size: 20px;
+    margin: 0 0 30px 0;
+}
+.sidebar-nav .nav-link {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+.sidebar-nav .nav-link.active {
+    background-color: #373e47;
+    font-weight: 600;
+}
+.sidebar-nav .nav-link:not(.active):hover {
+    background-color: #2d333b;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 20px 30px;
+    overflow-y: auto; /* Allow content to scroll */
+}
+.main-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* New Issue Row Styles */
+.issue-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+.issue-row:hover {
+    background-color: var(--sidebar-background);
+}
+
+.issue-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 12px;
+}
+
+.issue-summary {
+    color: var(--text-color);
+}
+.issue-key {
+    color: var(--text-color-muted);
+}
+
+/* Issue Status Pill */
+.issue-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 16px;
+    color: #fff;
+    flex-shrink: 0;
+}
+.status-gray { background-color: var(--status-gray); }
+.status-blue { background-color: var(--status-blue); }
+.status-green { background-color: var(--status-green); }
+
+.message { color: #888; font-style: italic; }
