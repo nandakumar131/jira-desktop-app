@@ -9,7 +9,9 @@ contextBridge.exposeInMainWorld('jiraAPI', {
   fetchIssues: () => ipcRenderer.invoke('jira:fetchIssues')
 });
 
-// Expose a secure API for general Electron functions
 contextBridge.exposeInMainWorld('electronAPI', {
-  openLink: (url) => ipcRenderer.send('electron:openLink', url)
+  openLink: (url) => ipcRenderer.send('electron:openLink', url),
+  saveCredentials: (credentials) => ipcRenderer.send('save-credentials', credentials),
+  openSettings: () => ipcRenderer.send('open-settings-window'),
+  cancelSettings: () => ipcRenderer.send('cancel-settings'),
 });

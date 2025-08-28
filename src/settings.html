@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Settings</title>
+    </head>
+<body>
+    <div class="container">
+        <h1>Jira Connection Settings</h1>
+        <p>Please enter your private Jira instance details.</p>
+        
+        <label for="jira-domain">Jira Domain</label>
+        <input type="text" id="jira-domain" placeholder="your-jira.yourcompany.com">
+        
+        <label for="jira-pat">Personal Access Token (PAT)</label>
+        <input type="password" id="jira-pat" placeholder="Enter your PAT here">
+        
+        <div class="button-group">
+            <button id="cancel-btn" class="btn-secondary">Cancel</button>
+            <button id="save-btn" class="btn-primary">Save and Continue</button>
+        </div>
+        <p id="error-msg" class="error"></p>
+    </div>
+</body>
+</html>

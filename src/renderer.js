@@ -1,5 +1,16 @@
-// src/renderer.js
 import './styles.css';
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchJiraIssues();
+
+    const settingsLink = document.getElementById('settings-link');
+    if (settingsLink) {
+        settingsLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            window.electronAPI.openSettings();
+        });
+    }
+});
 
 window.addEventListener('DOMContentLoaded', () => {
     fetchJiraIssues();
